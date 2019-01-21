@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>  
+    <h1>Library</h1>
+    <form action="/collect" method="POST">
+      Title<br>
+      <input type="text" name="title">
+      <br>
+      Author<br>
+      <input type="text" name="author"><br>
+      Genre<br>
+      <input type="text" name="genre">
+      <br>
+
+      <input type="submit" onclick="myFunction()" value="submit">
+      
+  </form>
+  <script>
+      function myFunction() {
+        alert("Added");
+      }
+      </script>
+
+      
+    <form action="/getUser" method="GET">
+      <input type="submit" value="Get User">
+    </form>
+  
+   
+  </body>
+</html>
