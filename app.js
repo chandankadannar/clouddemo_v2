@@ -29,6 +29,7 @@ app.use('/deleteAll', indexRouter);
 app.use('/update', indexRouter);
 app.use('/updatedata', indexRouter);
 app.use('/updated', indexRouter);
+app.use('/crud', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

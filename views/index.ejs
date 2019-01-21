@@ -26,7 +26,7 @@ form
   <body>  
     <h1>Library</h1>
     <div class="form">
-    <form name="Form1" action="/collect" method="POST">
+    <form name="form1" action="/collect" method="POST">
       Title<br>
       <input type="text" name="title">
       <br>
@@ -43,8 +43,22 @@ form
 
   <script>
       function myFunction() {
-        alert("Added");
-      }
+        var tit = document.forms["form1"]["title"].value;
+        var aut = document.forms["form1"]["author"].value;
+        var gen = document.forms["form1"]["genre"].value;
+        
+if ( tit == "" || aut== "" || gen== "")
+{
+alert("Please input a Value");
+return false;
+}
+else 
+{
+alert('Added');
+return true; 
+}
+}
+
       </script>
 
       

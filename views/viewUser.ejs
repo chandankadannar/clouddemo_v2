@@ -7,7 +7,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
       <style>
-          body {background-color: rgb(201, 176, 230);}
+          body {background-color:white}
           table   {color: black;}
           td   {color: black;}
           th  {
@@ -26,7 +26,7 @@
     
   </tr>
       <% for(var i=0;i<array.length;i++) { %>
-          <form action="/delete" method="POST">
+          <form action="/crud" method="POST">
             <tr>
               <input hidden type="text" name="preTitle" value="<%=arrVal[i].title%>">
               <td><input type="text" name="deleteval" value="<%=arrVal[i].title%>"></td>
