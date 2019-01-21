@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <style>
+          h1 {
+ 
+  text-align: left;
+}
 
+        div.form
+{
+    display: block;
+    text-align:left ;
+  
+}
+form
+{
+    display: inline-block;
+    /* margin-left: auto;
+    margin-right: auto; */
+    text-align: left;
+}
+
+          </style>
   </head>
   <body>  
     <h1>Library</h1>
-    <form action="/collect" method="POST">
+    <div class="form">
+    <form name="Form1" action="/collect" method="POST">
       Title<br>
       <input type="text" name="title">
       <br>
@@ -14,10 +35,12 @@
       Genre<br>
       <input type="text" name="genre">
       <br>
-
+    </div>  
       <input type="submit" onclick="myFunction()" value="submit">
       
   </form>
+  
+
   <script>
       function myFunction() {
         alert("Added");
@@ -29,6 +52,6 @@
       <input type="submit" value="Get User">
     </form>
   
-   
+  
   </body>
 </html>

@@ -60,6 +60,9 @@ router.post('/collect', function(req, res, next) {
 });
 
 router.post('/delete', function(req, res, next) {
+  var y=req.body.delete;
+  var z=req.body.update;
+  if(y){
   var x=req.body.deleteval;
   console.log(x);
   var db=firebaseadmin.database().ref("/"+x);
@@ -68,6 +71,31 @@ router.post('/delete', function(req, res, next) {
     console.error(error);
   });
   res.render('delete',{});
+}
+else
+{
+  var preKey=req.body.preTitle;
+  var title=req.body.deleteval;
+  var author=req.body.author;
+  var genre=req.body.genre;
+  var obj={
+    title:title,
+    author:author,
+    genre:genre
+  }
+  console.log(req.body);
+  var db=firebaseadmin.database().ref("/"+preKey);
+  db.set(null)
+  .catch(function (error) {
+    console.error(error);
+  });
+  var db=firebaseadmin.database().ref("/"+title);
+  db.set(obj)
+  .catch(function (error) {
+    console.error(error);
+  });
+  res.render('updated',{});
+}
 });
 
 
@@ -95,17 +123,27 @@ router.post('/deleteAll', function(req, res) {
 });
 
 router.post('/updatedata', function(req, res) {
-  console.log("here in updatedata")
-  var db=firebaseadmin.database().ref("/");
-  db.once("value", function (details) { 
-    console.log(details.val());
-    if(details.val()){
-      var arr=Object.keys(details.val()); 
-      var arrVal=Object.values(details.val());
-    }
-
-  res.render('update',{array:arr,arrVal:arrVal});
+  var preKey=req.body.preTitle;
+  var title=req.body.deleteval;
+  var author=req.body.author;
+  var genre=req.body.genre;
+  var obj={
+    title:title,
+    author:author,
+    genre:genre
+  }
+  console.log(req.body);
+  var db=firebaseadmin.database().ref("/"+preKey);
+  db.set(null)
+  .catch(function (error) {
+    console.error(error);
   });
+  var db=firebaseadmin.database().ref("/"+title);
+  db.set(obj)
+  .catch(function (error) {
+    console.error(error);
+  });
+  res.render('updated',{});
 });
 
 
